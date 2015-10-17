@@ -31,43 +31,40 @@ public class Pet {
         }
     }
     
-    public var Name : String {
+    public var name : String {
         get {
             return _name
         }
     }
     
-    public var Owner : String {
+    public var owner : String {
         get {
             return _owner
         }
     }
     
-    public var Type : String {
+    public var type : String {
         get {
             return _type
         }
     }
     
-    public var Age : Int {
+    public var age : Int {
         get {
             return _age
         }
     }
     
-    public var AgeAsString : String {
+    public var ageAsString : String {
         get {
             return "\(_age)"
         }
     }
     
-    public var Image : UIImage? {
+    public var image : UIImage? {
         get {
             return _image
         }
-    }
-    
-    //let rand = Int(arc4random_uniform(7))
-    
+    }    
     
 }

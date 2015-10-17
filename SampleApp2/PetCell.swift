@@ -21,12 +21,12 @@ public class PetCell : UITableViewCell {
     
     
     public func setPet(pet : Pet) {
-        lblPetName.text = pet.Name
-        lblPetOwner.text = pet.Owner
-        lblPetType.text = pet.Type
-        lblPetAge.text = pet.AgeAsString
+        lblPetName.text = pet.name
+        lblPetOwner.text = pet.owner
+        lblPetType.text = pet.type
+        lblPetAge.text = pet.ageAsString
         
-        if let image = pet.Image {
+        if let image = pet.image {
             imgPetImage.image = image 
         }
         

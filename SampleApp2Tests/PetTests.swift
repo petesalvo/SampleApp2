@@ -68,22 +68,22 @@ class PetTests: XCTestCase {
     }
     
     func thenPetNameIs(name : String) {
-        XCTAssertEqual(name, _pet.Name,  "Expected pet name to be \(name) but was \(_pet.Name)")
+        XCTAssertEqual(name, _pet.name,  "Expected pet name to be \(name) but was \(_pet.name)")
     }
     
     func thenPetOwnerIs(owner : String) {
-        XCTAssertEqual(owner, _pet.Owner,  "Expected pet owner to be \(owner) but was \(_pet.Owner)")
+        XCTAssertEqual(owner, _pet.owner,  "Expected pet owner to be \(owner) but was \(_pet.owner)")
     }
     
     func thenPetTypeIs(type : String) {
-        XCTAssertEqual(type, _pet.Type,  "Expected pet type to be \(type) but was \(_pet.Type)")
+        XCTAssertEqual(type, _pet.type,  "Expected pet type to be \(type) but was \(_pet.type)")
     }
     
     func thenPetAgeIs(age : Int) {
-        XCTAssertEqual(age, _pet.Age,  "Expected pet age to be \(age) but was \(_pet.Age)")
+        XCTAssertEqual(age, _pet.age,  "Expected pet age to be \(age) but was \(_pet.age)")
     }
     
     func thenPetAgeAsStringIs(age : String) {
-        XCTAssertEqual(age, _pet.AgeAsString,  "Expected pet age as string to be \(age) but was \(_pet.AgeAsString)")
+        XCTAssertEqual(age, _pet.ageAsString,  "Expected pet age as string to be \(age) but was \(_pet.ageAsString)")
     }
 }

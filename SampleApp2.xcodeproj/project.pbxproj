@@ -8,9 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		850938F61BD2D4CF00B6D2BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 850938F51BD2D4CF00B6D2BE /* Assets.xcassets */; settings = {ASSET_TAGS = (); }; };
+		850938F81BD2D8AE00B6D2BE /* RandomPet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850938F71BD2D8AE00B6D2BE /* RandomPet.swift */; settings = {ASSET_TAGS = (); }; };
 		85A96B7B1BD2B9230019CC56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A96B7A1BD2B9230019CC56 /* AppDelegate.swift */; };
-		85A96B7D1BD2B9230019CC56 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A96B7C1BD2B9230019CC56 /* MasterViewController.swift */; };
-		85A96B7F1BD2B9230019CC56 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A96B7E1BD2B9230019CC56 /* DetailViewController.swift */; };
+		85A96B7D1BD2B9230019CC56 /* PetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A96B7C1BD2B9230019CC56 /* PetsViewController.swift */; };
+		85A96B7F1BD2B9230019CC56 /* PetDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A96B7E1BD2B9230019CC56 /* PetDetailViewController.swift */; };
 		85A96B821BD2B9230019CC56 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85A96B801BD2B9230019CC56 /* Main.storyboard */; };
 		85A96B871BD2B9230019CC56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85A96B851BD2B9230019CC56 /* LaunchScreen.storyboard */; };
 		85A96B921BD2B9230019CC56 /* SampleApp2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A96B911BD2B9230019CC56 /* SampleApp2Tests.swift */; };
@@ -33,10 +34,11 @@
 
 /* Begin PBXFileReference section */
 		850938F51BD2D4CF00B6D2BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		850938F71BD2D8AE00B6D2BE /* RandomPet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomPet.swift; sourceTree = "<group>"; };
 		85A96B771BD2B9230019CC56 /* SampleApp2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleApp2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85A96B7A1BD2B9230019CC56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		85A96B7C1BD2B9230019CC56 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
-		85A96B7E1BD2B9230019CC56 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		85A96B7C1BD2B9230019CC56 /* PetsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetsViewController.swift; sourceTree = "<group>"; };
+		85A96B7E1BD2B9230019CC56 /* PetDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetDetailViewController.swift; sourceTree = "<group>"; };
 		85A96B811BD2B9230019CC56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		85A96B861BD2B9230019CC56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		85A96B881BD2B9230019CC56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -94,11 +96,12 @@
 				85A96B9F1BD2BA170019CC56 /* Controller */,
 				85A96B9C1BD2B9490019CC56 /* Model */,
 				85A96B7A1BD2B9230019CC56 /* AppDelegate.swift */,
-				85A96B7C1BD2B9230019CC56 /* MasterViewController.swift */,
-				85A96B7E1BD2B9230019CC56 /* DetailViewController.swift */,
+				85A96B7C1BD2B9230019CC56 /* PetsViewController.swift */,
+				85A96B7E1BD2B9230019CC56 /* PetDetailViewController.swift */,
 				85A96B801BD2B9230019CC56 /* Main.storyboard */,
 				85A96B851BD2B9230019CC56 /* LaunchScreen.storyboard */,
 				85A96B881BD2B9230019CC56 /* Info.plist */,
+				850938F71BD2D8AE00B6D2BE /* RandomPet.swift */,
 			);
 			path = SampleApp2;
 			sourceTree = "<group>";
@@ -239,10 +242,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				85A96BA11BD2BA300019CC56 /* PetManager.swift in Sources */,
-				85A96B7F1BD2B9230019CC56 /* DetailViewController.swift in Sources */,
+				850938F81BD2D8AE00B6D2BE /* RandomPet.swift in Sources */,
+				85A96B7F1BD2B9230019CC56 /* PetDetailViewController.swift in Sources */,
 				85A96B9E1BD2B9530019CC56 /* Pet.swift in Sources */,
 				85CD160F1BD2C1EB0099E766 /* PetCell.swift in Sources */,
-				85A96B7D1BD2B9230019CC56 /* MasterViewController.swift in Sources */,
+				85A96B7D1BD2B9230019CC56 /* PetsViewController.swift in Sources */,
 				85A96B7B1BD2B9230019CC56 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

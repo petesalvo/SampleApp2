@@ -13,9 +13,28 @@ public typealias CompletionBlock = () -> Void
 class PetManager {
     
     private var _petsArray : [Pet]
+    private let _petsToDownload : Int = 3
     
     init() {
         _petsArray = [Pet]()
+    }
+    
+    func downloadPets(closure : CompletionBlock) {
+        
+        print("Downloading pets from Remote location... ")
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) { () -> Void in
+            
+            var downloadedPets : Int = 0
+            repeat {
+                downloadedPets += 1
+                print("\"Downloaded\" Pet \(downloadedPets)")
+                
+                 NSThread.sleepForTimeInterval(1)
+            } while downloadedPets < self._petsToDownload
+            
+            closure()
+            
+        }
     }
     
     func addPet(pet : Pet, closure : CompletionBlock) {
