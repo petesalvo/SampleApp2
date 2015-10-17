@@ -8,6 +8,8 @@
 
 import Foundation
 
+public typealias CompletionBlock = () -> Void
+
 class PetManager {
     
     private var _petsArray : [Pet]
@@ -16,16 +18,23 @@ class PetManager {
         _petsArray = [Pet]()
     }
     
-    func addPet(pet : Pet) {
+    func addPet(pet : Pet, closure : CompletionBlock) {
         _petsArray.append(pet)
+        closure()
     }
     
-    func removePet(index : Int) {
+    func removePetAtIndex(index : Int, closure : CompletionBlock) {
         _petsArray.removeAtIndex(index)
+        closure()
     }
     
-    func empty() {
+    func petAtIndex(index : Int) -> Pet {
+        return _petsArray[index]
+    }
+    
+    func empty(closure : CompletionBlock) {
         _petsArray.removeAll()
+        closure()
     }
     
     var count : Int {

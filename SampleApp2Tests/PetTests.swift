@@ -11,9 +11,12 @@ import SampleApp2
 
 class PetTests: XCTestCase {
 
-    private var _petName : String = ""
-    private var _petDOB : String = ""
     private var _pet : Pet!
+    
+    private var _name : String = ""
+    private var _owner : String = ""
+    private var _type : String = ""
+    private var _age : Int = 0
     
     override func setUp() {
         super.setUp()
@@ -27,34 +30,60 @@ class PetTests: XCTestCase {
 
     func testConstructerAssignsValuesCorrectly() {
         givenAPetName("Fuzzy")
-        givenAPetDOB(DateFormatter.dateInMMddYYYYFormatFromString("12/2/2014"))
+        givenAPetOwner("Horatio Jones")
+        givenAPetType("Grey Tabby")
+        givenAPetAge(3)
+        
         whenPetConstructed()
+        
         thenPetNameIs("Fuzzy")
-        thenPetDOBIs("12/2/2014")
+        thenPetOwnerIs("Horatio Jones")
+        thenPetTypeIs("Grey Tabby")
+        thenPetAgeIs(3)
+        
+        thenPetAgeAsStringIs("3")
+        
     }
 
 //MARK: BDD utility methods
     
     func givenAPetName(name : String) {
-        _petName = name
+        _name = name
     }
     
-    func givenAPetDOB(dob : String) {
-        _petDOB = dob
+    func givenAPetOwner(owner : String) {
+        _owner = owner
+    }
+    
+    func givenAPetType(type : String) {
+        _type = type
+    }
+    
+    func givenAPetAge(age : Int) {
+        _age = age
     }
     
     func whenPetConstructed() {
-        _pet = Pet(name: _petName, dob: _petDOB)
+        _pet = Pet(name: _name, owner: _owner, type: _type, age: _age)
     }
     
     func thenPetNameIs(name : String) {
         XCTAssertEqual(name, _pet.Name,  "Expected pet name to be \(name) but was \(_pet.Name)")
     }
     
-    func thenPetDOBIs(dob : String) {
-        XCTAssertEqual(dob, _pet.DOB,  "Expected pet DOB to be \(dob) but was \(_pet.DOB)")
-        
+    func thenPetOwnerIs(owner : String) {
+        XCTAssertEqual(owner, _pet.Owner,  "Expected pet owner to be \(owner) but was \(_pet.Owner)")
     }
     
+    func thenPetTypeIs(type : String) {
+        XCTAssertEqual(type, _pet.Type,  "Expected pet type to be \(type) but was \(_pet.Type)")
+    }
     
+    func thenPetAgeIs(age : Int) {
+        XCTAssertEqual(age, _pet.Age,  "Expected pet age to be \(age) but was \(_pet.Age)")
+    }
+    
+    func thenPetAgeAsStringIs(age : String) {
+        XCTAssertEqual(age, _pet.AgeAsString,  "Expected pet age as string to be \(age) but was \(_pet.AgeAsString)")
+    }
 }
