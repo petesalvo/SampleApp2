@@ -7,9 +7,12 @@
 //
 
 import XCTest
+import SampleApp2
 
 class PetManagerTests: XCTestCase {
 
+    private var _petManager : PetManager!
+    
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -20,16 +23,26 @@ class PetManagerTests: XCTestCase {
         super.tearDown()
     }
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testManagerCountIsCorrect() {
+        givenAPetManager()
+        givenAPet(RandomPet.random())
+        givenAPet(RandomPet.random())
+        thenPetCountIs(2)
     }
 
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock {
-            // Put the code you want to measure the time of here.
-        }
+    
+    //MARK: BDD utility methods
+    
+    func givenAPet(pet : Pet) {
+        _petManager.addPet(pet, closure: nil)
+    }
+    
+    func givenAPetManager() {
+        _petManager = PetManager()
     }
 
+    func thenPetCountIs (count : Int) {
+        XCTAssertEqual(count, _petManager.count, "Pet count wrong")
+    }
+    
 }

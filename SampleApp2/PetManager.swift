@@ -10,26 +10,33 @@ import Foundation
 
 public typealias CompletionBlock = () -> Void
 
-class PetManager {
+public class PetManager {
     
     private var _petsArray : [Pet]
     private let _petsToDownload : Int = 3
     
-    init() {
+    public init() {
         _petsArray = [Pet]()
     }
     
-    func downloadPets(closure : CompletionBlock) {
+    public func downloadPets(closure : CompletionBlock) {
         
         print("Downloading pets from Remote location... ")
+        
+
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) { () -> Void in
+            
+            // Simuate some network latency
+            NSThread.sleepForTimeInterval(1.5)
             
             var downloadedPets : Int = 0
             repeat {
                 downloadedPets += 1
                 print("\"Downloaded\" Pet \(downloadedPets)")
                 
-                 NSThread.sleepForTimeInterval(1)
+                self.addPet(RandomPet.random(), closure: nil)
+
+                NSThread.sleepForTimeInterval(1)
             } while downloadedPets < self._petsToDownload
             
             closure()
@@ -37,26 +44,32 @@ class PetManager {
         }
     }
     
-    func addPet(pet : Pet, closure : CompletionBlock) {
+    public func addPet(pet : Pet, closure : CompletionBlock?) {
         _petsArray.append(pet)
-        closure()
+        if closure != nil {
+            closure!()
+        }
     }
     
-    func removePetAtIndex(index : Int, closure : CompletionBlock) {
+    public func removePetAtIndex(index : Int, closure : CompletionBlock) {
         _petsArray.removeAtIndex(index)
         closure()
     }
     
-    func petAtIndex(index : Int) -> Pet {
+    public func petAtIndex(index : Int) -> Pet {
         return _petsArray[index]
     }
     
-    func empty(closure : CompletionBlock) {
+    public func replacePetAtIndex(index : Int, pet : Pet) {
+        _petsArray[index] = pet
+    }
+    
+    public func empty(closure : CompletionBlock) {
         _petsArray.removeAll()
         closure()
     }
     
-    var count : Int {
+    public var count : Int {
         get {
             return _petsArray.count
         }

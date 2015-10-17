@@ -9,8 +9,18 @@
 import UIKit
 
 class PetDetailViewController: UIViewController {
-
+    
     @IBOutlet weak var txtPetName: UITextField!
+    @IBOutlet weak var txtPetOwner: UITextField!
+    
+    @IBOutlet weak var txtPetAge: UITextField!
+    @IBOutlet weak var txtPetType: UITextField!
+    
+    @IBOutlet weak var imgPetImage: UIImageView!
+    
+    var actionToPerformWhenPetSaved : CompletionBlock? = nil
+    
+    var _pet : Pet!
     
     var petDetail: Pet? {
         didSet {
@@ -19,12 +29,37 @@ class PetDetailViewController: UIViewController {
         }
     }
 
+    var savedPed : Pet {
+        get {
+            return _pet
+        }
+    }
     func configureView() {
         // Update the user interface for the detail item.
         if let pet = self.petDetail {
-            if let textField = self.txtPetName {
-                textField.text = pet.name
+            
+            if let nameTextField = self.txtPetName {
+                nameTextField.text = pet.name
             }
+            
+            if let ownerTextField = self.txtPetOwner {
+                ownerTextField.text = pet.owner
+            }
+            
+            if let ageTextField = self.txtPetAge {
+                ageTextField.text = pet.ageAsString
+            }
+            
+            if let typeTextField = self.txtPetType {
+                typeTextField.text = pet.type
+            }
+            
+            if
+                let petImage = self.imgPetImage,
+                let image = pet.image {
+                petImage.image = image
+            }
+            
         }
     }
 
@@ -33,27 +68,28 @@ class PetDetailViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         self.configureView()
     }
+    
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func saveChanges(sender : AnyObject?) {
+
+        
+        _pet = Pet(name: txtPetName.text!, owner: txtPetOwner.text!, type: txtPetType.text!, age: 4, imageName: petDetail!.imageName)
+                
+        if (actionToPerformWhenPetSaved != nil) {
+            self.dismissViewControllerAnimated(true, completion: actionToPerformWhenPetSaved)
+        } else {
+            self.dismissViewControllerAnimated(true, completion: nil)
+        }
+    }
+
+    @IBAction func dismissChanges(sender : AnyObject?) {
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
 
     
-    @IBAction func saveChanges(sender: AnyObject) {
-        print("attempting to dismiss")
-//        self.dismissViewControllerAnimated(true, completion: nil)
-        
-        self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
-        
-//        if let split = self.splitViewController {
-//            let controllers = split.viewControllers
-//            let navControll = controllers[controllers.count-1] as! UINavigationController
-//            
-//            navControll.dismissViewControllerAnimated(true, completion: nil)
-//        }
-
-        
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
 
 }

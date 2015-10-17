@@ -16,19 +16,15 @@ public class Pet {
     private var _owner : String
     private var _type : String
     private var _age : Int
-    private var _image : UIImage?
+    private var _imageName : String
 
     
-    public init(name: String, owner : String, type : String, age : Int) {
+    public init(name: String, owner : String, type : String, age : Int, imageName : String) {
         _name = name
         _owner = owner
         _type = type
         _age = age
-        
-        _image = nil
-        if let thumbnail = UIImage(named: "petPic1") {
-            _image = thumbnail
-        }
+        _imageName = imageName
     }
     
     public var name : String {
@@ -61,9 +57,18 @@ public class Pet {
         }
     }
     
+    public var imageName : String {
+        get {
+            return _imageName
+        }
+    }
+    
     public var image : UIImage? {
         get {
-            return _image
+            if let thumbnail = UIImage(named: _imageName) {
+                return thumbnail
+            }
+            return nil
         }
     }    
     

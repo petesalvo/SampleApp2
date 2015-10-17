@@ -8,19 +8,14 @@
 
 import Foundation
 
-class RandomPet {
+public class RandomPet {
     
-    class func random() -> Pet {
-        let randomAge = Int(arc4random_uniform(7)) + 1
-        
-        let pet : Pet = Pet(name: RandomName.randomPetName(), owner : RandomName.randomHumanName(), type : "Tabby Cat", age: randomAge)
-        
+    public class func random() -> Pet {
+        let randomAge = Int(arc4random_uniform(13)) + 1
+        let randomPic = "petPic\(Int(arc4random_uniform(7)) + 1)"
+        let pet : Pet = Pet(name: RandomName.randomPetName(), owner : RandomName.randomHumanName(), type : RandomName.randomPetType(), age: randomAge, imageName: randomPic)
         return pet
     }
-    
-    
-    
-
 }
 
 // I didn't know something like this existed...but it does.
@@ -81,4 +76,19 @@ class RandomName {
         let index = Int(arc4random_uniform(UInt32(randomNames.count)))
         return randomNames[index]
     }
+    
+    class func randomPetType() -> String {
+        let randomNames : [String] =
+            ["English Origin",
+            "Shorthair",
+            "Longhair",
+            "Spotted",
+            "Extra Fancy",
+            "Rare",
+            "Ruffled"]
+        
+        let index = Int(arc4random_uniform(UInt32(randomNames.count)))
+        return randomNames[index]
+    }
+
 }

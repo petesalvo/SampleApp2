@@ -33,37 +33,113 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wXC-gM-DEB" userLabel="txtPetName">
-                                <rect key="frame" x="107" y="78" width="473" height="30"/>
+                                <rect key="frame" x="215" y="84" width="365" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pet Name" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D4p-Qi-9CX" userLabel="lblPetName">
-                                <rect key="frame" x="20" y="81" width="79" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pet Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D4p-Qi-9CX" userLabel="lblPetName">
+                                <rect key="frame" x="128" y="87" width="79" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jhU-6w-TBM" userLabel="txtPetOwner">
+                                <rect key="frame" x="215" y="132" width="365" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Owner" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a8n-dA-zXK" userLabel="lblPetOwner">
+                                <rect key="frame" x="156" y="135" width="51" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="4cc-ls-8X2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pMm-TN-eI3" userLabel="imgPetImage">
+                                <rect key="frame" x="20" y="82" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="HbV-Pp-MUu"/>
+                                    <constraint firstAttribute="width" constant="100" id="iTD-Jw-h6M"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sob-dk-24s" userLabel="txtPetAge">
+                                <rect key="frame" x="215" y="181" width="365" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Age" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dkt-1X-eja" userLabel="lblPetName">
+                                <rect key="frame" x="128" y="184" width="79" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GRa-AL-H2b" userLabel="lblPetOwner">
+                                <rect key="frame" x="169" y="232" width="38" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="JhA-2m-rHf"/>
+                                    <constraint firstAttribute="width" constant="38" id="WaC-YA-Yk8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="md1-P3-IRo" userLabel="txtPetType">
+                                <rect key="frame" x="215" y="229" width="365" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="wXC-gM-DEB" secondAttribute="trailing" id="3gC-aC-VA1"/>
-                            <constraint firstItem="D4p-Qi-9CX" firstAttribute="baseline" secondItem="wXC-gM-DEB" secondAttribute="baseline" id="CC0-9V-Oou"/>
-                            <constraint firstItem="D4p-Qi-9CX" firstAttribute="top" secondItem="SYR-Wa-9uf" secondAttribute="bottom" constant="17" id="DGT-9N-qrW"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="D4p-Qi-9CX" secondAttribute="leading" id="EXa-FF-1Vf"/>
-                            <constraint firstItem="wXC-gM-DEB" firstAttribute="leading" secondItem="D4p-Qi-9CX" secondAttribute="trailing" constant="8" id="FQa-8g-5Y8"/>
-                            <constraint firstItem="wXC-gM-DEB" firstAttribute="top" secondItem="SYR-Wa-9uf" secondAttribute="bottom" constant="14" id="w1m-Kf-r5x"/>
+                            <constraint firstItem="a8n-dA-zXK" firstAttribute="baseline" secondItem="jhU-6w-TBM" secondAttribute="baseline" id="0dc-dk-nGf"/>
+                            <constraint firstItem="jhU-6w-TBM" firstAttribute="top" secondItem="wXC-gM-DEB" secondAttribute="bottom" constant="18" id="0oY-nq-xWv"/>
+                            <constraint firstItem="a8n-dA-zXK" firstAttribute="leading" secondItem="pMm-TN-eI3" secondAttribute="trailing" constant="36" id="0x2-PO-tju"/>
+                            <constraint firstItem="md1-P3-IRo" firstAttribute="leading" secondItem="GRa-AL-H2b" secondAttribute="trailing" constant="8" id="1Jl-1h-t5T"/>
+                            <constraint firstItem="dkt-1X-eja" firstAttribute="leading" secondItem="D4p-Qi-9CX" secondAttribute="leading" id="75v-u6-YjT"/>
+                            <constraint firstItem="a8n-dA-zXK" firstAttribute="trailing" secondItem="D4p-Qi-9CX" secondAttribute="trailing" id="7Fq-Ya-F4x"/>
+                            <constraint firstItem="Sob-dk-24s" firstAttribute="leading" secondItem="dkt-1X-eja" secondAttribute="trailing" constant="8" id="7tB-1t-fuM"/>
+                            <constraint firstItem="jhU-6w-TBM" firstAttribute="leading" secondItem="a8n-dA-zXK" secondAttribute="trailing" constant="8" id="BgW-eP-rer"/>
+                            <constraint firstItem="GRa-AL-H2b" firstAttribute="baseline" secondItem="md1-P3-IRo" secondAttribute="baseline" id="C3i-AO-xQN"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wXC-gM-DEB" secondAttribute="trailing" id="Icf-5A-m75"/>
+                            <constraint firstItem="pMm-TN-eI3" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leadingMargin" id="IrJ-HG-gor"/>
+                            <constraint firstItem="md1-P3-IRo" firstAttribute="top" secondItem="Sob-dk-24s" secondAttribute="bottom" constant="18" id="KJL-X7-HfA"/>
+                            <constraint firstItem="dkt-1X-eja" firstAttribute="top" secondItem="a8n-dA-zXK" secondAttribute="bottom" constant="28" id="Y6O-OM-pca"/>
+                            <constraint firstItem="Sob-dk-24s" firstAttribute="top" secondItem="jhU-6w-TBM" secondAttribute="bottom" constant="19" id="Yp8-FI-C0f"/>
+                            <constraint firstItem="wXC-gM-DEB" firstAttribute="leading" secondItem="D4p-Qi-9CX" secondAttribute="trailing" constant="8" id="ZPI-aK-e7K"/>
+                            <constraint firstItem="wXC-gM-DEB" firstAttribute="top" secondItem="SYR-Wa-9uf" secondAttribute="bottom" constant="20" id="bGF-xS-Pi5"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="jhU-6w-TBM" secondAttribute="trailing" id="c0j-2r-grV"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="md1-P3-IRo" secondAttribute="trailing" id="fQX-Xb-5TW"/>
+                            <constraint firstItem="a8n-dA-zXK" firstAttribute="top" secondItem="D4p-Qi-9CX" secondAttribute="bottom" constant="27" id="is2-ey-oOx"/>
+                            <constraint firstItem="a8n-dA-zXK" firstAttribute="trailing" secondItem="dkt-1X-eja" secondAttribute="trailing" id="kvW-oH-AH0"/>
+                            <constraint firstItem="GRa-AL-H2b" firstAttribute="trailing" secondItem="dkt-1X-eja" secondAttribute="trailing" id="pQB-Ii-zAo"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Sob-dk-24s" secondAttribute="trailing" id="q81-Ud-Vqr"/>
+                            <constraint firstItem="D4p-Qi-9CX" firstAttribute="leading" secondItem="pMm-TN-eI3" secondAttribute="trailing" constant="8" symbolic="YES" id="vH6-aO-gwf"/>
+                            <constraint firstItem="D4p-Qi-9CX" firstAttribute="top" secondItem="SYR-Wa-9uf" secondAttribute="bottom" constant="23" id="wza-E2-QYG"/>
+                            <constraint firstItem="GRa-AL-H2b" firstAttribute="top" secondItem="dkt-1X-eja" secondAttribute="bottom" constant="27" id="xs8-U2-xQQ"/>
+                            <constraint firstItem="pMm-TN-eI3" firstAttribute="top" secondItem="SYR-Wa-9uf" secondAttribute="bottom" constant="18" id="yO8-7B-sd1"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Pet Details" id="mOI-FS-AaM">
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="mUO-fM-8Dq" userLabel="btnSave">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="6tv-ed-w2P">
                             <connections>
-                                <action selector="saveChanges:" destination="JEX-9P-axG" id="Fi2-e4-r7u"/>
+                                <action selector="dismissChanges:" destination="JEX-9P-axG" id="FJe-Mz-Q8O"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="j3C-g6-quh">
+                            <connections>
+                                <action selector="saveChanges:" destination="JEX-9P-axG" id="dfW-MC-hV2"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="imgPetImage" destination="pMm-TN-eI3" id="o7S-Q6-U9g"/>
+                        <outlet property="txtPetAge" destination="Sob-dk-24s" id="uR7-qI-ZnZ"/>
                         <outlet property="txtPetName" destination="wXC-gM-DEB" id="o9g-Zs-R6u"/>
+                        <outlet property="txtPetOwner" destination="jhU-6w-TBM" id="yob-eu-kS6"/>
+                        <outlet property="txtPetType" destination="md1-P3-IRo" id="PfH-SI-c6p"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>
@@ -152,7 +228,7 @@
                                     <outlet property="lblPetName" destination="sWT-PQ-Z9w" id="3UY-oA-6N8"/>
                                     <outlet property="lblPetOwner" destination="hXs-bD-lZw" id="wYB-jm-cwu"/>
                                     <outlet property="lblPetType" destination="zbU-nF-oE3" id="8U2-HU-7zt"/>
-                                    <segue destination="vC3-pB-5Vb" kind="showDetail" identifier="showPetDetail" id="6S0-TO-JiA"/>
+                                    <segue destination="vC3-pB-5Vb" kind="presentation" identifier="showPetDetail" id="6S0-TO-JiA"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

@@ -15,20 +15,27 @@ class PetsViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-    
-        _petManager.downloadPets { () -> Void in
-            self.tableView.reloadData()
-        }
-        
-        // Do any additional setup after loading the view, typically from a nib.
-        self.navigationItem.leftBarButtonItem = self.editButtonItem()
 
-        let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "addNewPet:")
-        self.navigationItem.rightBarButtonItem = addButton
+        
         if let split = self.splitViewController {
             let controllers = split.viewControllers
             self._detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? PetDetailViewController
         }
+        
+        
+        self.showFullScreenModalActivityIndicator()
+        
+        let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "addNewPet:")
+        _petManager.downloadPets { () -> Void in
+            print("Done downloading pets")
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                self.tableView.reloadData()
+                self.navigationItem.rightBarButtonItem = addButton
+                self.hideFullScreenModalActivityIndicator()
+            })
+            
+        }
+
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -60,8 +67,10 @@ class PetsViewController: UITableViewController {
                 let pet = _petManager.petAtIndex(indexPath.row)
                 let controller = (segue.destinationViewController as! UINavigationController).topViewController as! PetDetailViewController
                 controller.petDetail = pet
-                controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
-                controller.navigationItem.leftItemsSupplementBackButton = true
+                controller.actionToPerformWhenPetSaved = {
+                    self._petManager.replacePetAtIndex(indexPath.row, pet: controller.savedPed)
+                    self.tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+                }
             }
         }
     }
