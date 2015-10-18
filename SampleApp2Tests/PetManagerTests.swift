@@ -30,6 +30,20 @@ class PetManagerTests: XCTestCase {
         thenPetCountIs(2)
     }
     
+    func testReplacePet() {
+        givenAPetManager()
+        givenAPet(Pet(name: "Duke", owner: "David Smith", type: "Egyptian Longhair", age: 6, imageName: ""))
+        
+        let newPet : Pet = Pet(name: "Lancelot", owner: "Karen Odoul", type: "Tabby", age: 5, imageName: "")
+        _petManager.replacePetAtIndex(0, pet: newPet)
+        
+        let replacedPed = _petManager.petAtIndex(0)
+        thenPetNameIs("Lancelot", pet: replacedPed)
+        thenPetOwnerIs("Karen Odoul", pet: replacedPed)
+        thenPetTypeIs("Tabby", pet: replacedPed)
+        thenPetAgeAsStringIs("5", pet: replacedPed)
+        
+    }
     
     func testRemoveFirstPet() {
         givenAPetManager()
@@ -42,7 +56,6 @@ class PetManagerTests: XCTestCase {
         thenPetOwnerIs("Karen Odoul", pet: pet)
         thenPetTypeIs("Tabby", pet: pet)
         thenPetAgeAsStringIs("5", pet: pet)
-        
     }
     
     func testRemoveLastPet() {

@@ -33,68 +33,6 @@
             endingLineNumber = "12"
             landmarkName = "PetCellTests"
             landmarkType = "3">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SampleApp2Tests.PetCellTests.__deallocating_deinit"
-                  moduleName = "SampleApp2Tests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/psalvo/Documents/Development/SampleApp2/SampleApp2Tests/PetCellTests.swift"
-                  timestampString = "466900163.740043"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "12">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SampleApp2Tests.PetCellTests.init (SampleApp2Tests.PetCellTests.Type)(invocation : Swift.Optional&lt;ObjectiveC.NSInvocation&gt;) -&gt; SampleApp2Tests.PetCellTests"
-                  moduleName = "SampleApp2Tests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/psalvo/Documents/Development/SampleApp2/SampleApp2Tests/PetCellTests.swift"
-                  timestampString = "466900163.740256"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "16">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SampleApp2Tests.PetCellTests.init (SampleApp2Tests.PetCellTests.Type)(selector : ObjectiveC.Selector) -&gt; SampleApp2Tests.PetCellTests"
-                  moduleName = "SampleApp2Tests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/psalvo/Documents/Development/SampleApp2/SampleApp2Tests/PetCellTests.swift"
-                  timestampString = "466900163.740512"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "16">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SampleApp2Tests.PetCellTests.init (SampleApp2Tests.PetCellTests.Type)() -&gt; SampleApp2Tests.PetCellTests"
-                  moduleName = "SampleApp2Tests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/psalvo/Documents/Development/SampleApp2/SampleApp2Tests/PetCellTests.swift"
-                  timestampString = "466900163.740694"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "12">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

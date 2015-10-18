@@ -52,7 +52,6 @@ class PetDetailViewController: UIViewController {
                 let image = pet.image {
                 petImage.image = image
             }
-            
         }
     }
 
@@ -66,30 +65,29 @@ class PetDetailViewController: UIViewController {
     @IBAction func saveChanges(sender : AnyObject?) {
         
         if let petAge = Int(txtPetAge.text!) {
-            
             let pet : Pet = Pet(name: txtPetName.text!, owner: txtPetOwner.text!, type: txtPetType.text!, age: petAge, imageName: petDetail!.imageName)
             self.dismissViewControllerAnimated(true, completion: actionToPerformWhenPetSaved ?? nil)
-            
             self.petDetail = pet
-
-            
             
         } else {
-            let alertController : UIAlertController = UIAlertController(title: "Invalid age", message: "Please enter a number for Pet Age", preferredStyle: .Alert)
-            
-            let ok = UIAlertAction(title: "OK", style: .Default) { (action) in
-                //No action needed
-            }
-            alertController.addAction(ok)
-            
-            self.presentViewController(alertController, animated: true, completion: nil)
+            displayNonNumericAgeMessage()
         }
     }
 
+    private func displayNonNumericAgeMessage() {
+        
+        let alertController : UIAlertController = UIAlertController(title: "Invalid age", message: "Please enter a number for Pet Age", preferredStyle: .Alert)
+        
+        let ok = UIAlertAction(title: "OK", style: .Default) { (action) in
+            //No action needed
+        }
+        alertController.addAction(ok)
+        self.presentViewController(alertController, animated: true, completion: nil)
+    }
+    
     @IBAction func dismissChanges(sender : AnyObject?) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
-
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
