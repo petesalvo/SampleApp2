@@ -10,7 +10,6 @@ import Foundation
 import UIKit
 
 public class PetCell : UITableViewCell {
- 
     
     @IBOutlet weak var lblPetName : UILabel!
     @IBOutlet weak var lblPetOwner : UILabel!
@@ -18,8 +17,7 @@ public class PetCell : UITableViewCell {
     @IBOutlet weak var lblPetAge : UILabel!
     
     @IBOutlet weak var imgPetImage : UIImageView!
-    
-    
+        
     public func setPet(pet : Pet) {
         lblPetName.text = pet.name
         lblPetOwner.text = pet.owner

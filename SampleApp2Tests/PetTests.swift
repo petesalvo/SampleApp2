@@ -42,8 +42,8 @@ class PetTests: XCTestCase {
         thenPetAgeIs(3)
         
         thenPetAgeAsStringIs("3")
-        
     }
+    
 
 //MARK: BDD utility methods
     
@@ -64,7 +64,7 @@ class PetTests: XCTestCase {
     }
     
     func whenPetConstructed() {
-        _pet = Pet(name: _name, owner: _owner, type: _type, age: _age)
+        _pet = Pet(name: _name, owner: _owner, type: _type, age: _age, imageName : "")
     }
     
     func thenPetNameIs(name : String) {

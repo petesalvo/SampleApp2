@@ -53,7 +53,7 @@ class PetsViewController: UITableViewController {
         let pet : Pet = RandomPet.random()
         
         _petManager.addPet(pet) { () -> Void in
-            let indexPath = NSIndexPath(forRow: self._petManager.count - 1, inSection: 0)
+            let indexPath = NSIndexPath(forRow: self._petManager.petCount - 1, inSection: 0)
             
             self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
         }
@@ -68,7 +68,7 @@ class PetsViewController: UITableViewController {
                 let controller = (segue.destinationViewController as! UINavigationController).topViewController as! PetDetailViewController
                 controller.petDetail = pet
                 controller.actionToPerformWhenPetSaved = {
-                    self._petManager.replacePetAtIndex(indexPath.row, pet: controller.savedPed)
+                    self._petManager.replacePetAtIndex(indexPath.row, pet: controller.petDetail!)
                     self.tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
                 }
             }
@@ -82,7 +82,7 @@ class PetsViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return _petManager.count
+        return _petManager.petCount
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

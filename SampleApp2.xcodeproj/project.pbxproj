@@ -15,7 +15,6 @@
 		85A96B7F1BD2B9230019CC56 /* PetDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A96B7E1BD2B9230019CC56 /* PetDetailViewController.swift */; };
 		85A96B821BD2B9230019CC56 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85A96B801BD2B9230019CC56 /* Main.storyboard */; };
 		85A96B871BD2B9230019CC56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85A96B851BD2B9230019CC56 /* LaunchScreen.storyboard */; };
-		85A96B921BD2B9230019CC56 /* SampleApp2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A96B911BD2B9230019CC56 /* SampleApp2Tests.swift */; };
 		85A96B9E1BD2B9530019CC56 /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A96B9D1BD2B9530019CC56 /* Pet.swift */; settings = {ASSET_TAGS = (); }; };
 		85A96BA11BD2BA300019CC56 /* PetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A96BA01BD2BA300019CC56 /* PetManager.swift */; settings = {ASSET_TAGS = (); }; };
 		85A96BA31BD2BB1A0019CC56 /* PetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A96BA21BD2BB1A0019CC56 /* PetTests.swift */; settings = {ASSET_TAGS = (); }; };
@@ -45,7 +44,6 @@
 		85A96B861BD2B9230019CC56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		85A96B881BD2B9230019CC56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		85A96B8D1BD2B9230019CC56 /* SampleApp2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SampleApp2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		85A96B911BD2B9230019CC56 /* SampleApp2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleApp2Tests.swift; sourceTree = "<group>"; };
 		85A96B931BD2B9230019CC56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		85A96B9D1BD2B9530019CC56 /* Pet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
 		85A96BA01BD2BA300019CC56 /* PetManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetManager.swift; sourceTree = "<group>"; };
@@ -111,7 +109,6 @@
 		85A96B901BD2B9230019CC56 /* SampleApp2Tests */ = {
 			isa = PBXGroup;
 			children = (
-				85A96B911BD2B9230019CC56 /* SampleApp2Tests.swift */,
 				85A96B931BD2B9230019CC56 /* Info.plist */,
 				85A96BA21BD2BB1A0019CC56 /* PetTests.swift */,
 				85A96BA91BD2C0E00019CC56 /* PetManagerTests.swift */,
@@ -259,7 +256,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				85A96B921BD2B9230019CC56 /* SampleApp2Tests.swift in Sources */,
 				85A96BAA1BD2C0E00019CC56 /* PetManagerTests.swift in Sources */,
 				85A96BA31BD2BB1A0019CC56 /* PetTests.swift in Sources */,
 			);

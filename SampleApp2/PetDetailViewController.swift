@@ -20,20 +20,13 @@ class PetDetailViewController: UIViewController {
     
     var actionToPerformWhenPetSaved : CompletionBlock? = nil
     
-    var _pet : Pet!
-    
     var petDetail: Pet? {
         didSet {
             // Update the view.
             self.configureView()
         }
     }
-
-    var savedPed : Pet {
-        get {
-            return _pet
-        }
-    }
+    
     func configureView() {
         // Update the user interface for the detail item.
         if let pet = self.petDetail {
@@ -71,14 +64,25 @@ class PetDetailViewController: UIViewController {
     
 
     @IBAction func saveChanges(sender : AnyObject?) {
-
         
-        _pet = Pet(name: txtPetName.text!, owner: txtPetOwner.text!, type: txtPetType.text!, age: 4, imageName: petDetail!.imageName)
-                
-        if (actionToPerformWhenPetSaved != nil) {
-            self.dismissViewControllerAnimated(true, completion: actionToPerformWhenPetSaved)
+        if let petAge = Int(txtPetAge.text!) {
+            
+            let pet : Pet = Pet(name: txtPetName.text!, owner: txtPetOwner.text!, type: txtPetType.text!, age: petAge, imageName: petDetail!.imageName)
+            self.dismissViewControllerAnimated(true, completion: actionToPerformWhenPetSaved ?? nil)
+            
+            self.petDetail = pet
+
+            
+            
         } else {
-            self.dismissViewControllerAnimated(true, completion: nil)
+            let alertController : UIAlertController = UIAlertController(title: "Invalid age", message: "Please enter a number for Pet Age", preferredStyle: .Alert)
+            
+            let ok = UIAlertAction(title: "OK", style: .Default) { (action) in
+                //No action needed
+            }
+            alertController.addAction(ok)
+            
+            self.presentViewController(alertController, animated: true, completion: nil)
         }
     }
 
@@ -91,6 +95,7 @@ class PetDetailViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
 
 }
 

@@ -23,7 +23,6 @@ public class PetManager {
         
         print("Downloading pets from Remote location... ")
         
-
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) { () -> Void in
             
             // Simuate some network latency
@@ -51,9 +50,27 @@ public class PetManager {
         }
     }
     
-    public func removePetAtIndex(index : Int, closure : CompletionBlock) {
+    public func removePetAtIndex(index : Int, closure : CompletionBlock?) {
         _petsArray.removeAtIndex(index)
-        closure()
+        if closure != nil {
+            closure!()
+        }
+    }
+    
+    public func removeLastPet() {
+        if !_petsArray.isEmpty {
+            _petsArray.removeLast()
+        } else {
+            print("Warning: no pets to remove!")
+        }
+    }
+    
+    public func removeFirstPet() {
+        if !_petsArray.isEmpty {
+            _petsArray.removeFirst()
+        } else {
+            print("Warning: no pets to remove!")
+        }
     }
     
     public func petAtIndex(index : Int) -> Pet {
@@ -64,12 +81,7 @@ public class PetManager {
         _petsArray[index] = pet
     }
     
-    public func empty(closure : CompletionBlock) {
-        _petsArray.removeAll()
-        closure()
-    }
-    
-    public var count : Int {
+    public var petCount : Int {
         get {
             return _petsArray.count
         }

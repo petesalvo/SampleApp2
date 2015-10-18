@@ -29,7 +29,73 @@ class PetManagerTests: XCTestCase {
         givenAPet(RandomPet.random())
         thenPetCountIs(2)
     }
+    
+    
+    func testRemoveFirstPet() {
+        givenAPetManager()
+        givenAPet(Pet(name: "Duke", owner: "David Smith", type: "Egyptian Longhair", age: 6, imageName: ""))
+        givenAPet(Pet(name: "Lancelot", owner: "Karen Odoul", type: "Tabby", age: 5, imageName: ""))
+        whenFirstPetRemoved()
+        
+        let pet : Pet = _petManager.petAtIndex(_petManager.petCount - 1)
+        thenPetNameIs("Lancelot", pet: pet)
+        thenPetOwnerIs("Karen Odoul", pet: pet)
+        thenPetTypeIs("Tabby", pet: pet)
+        thenPetAgeAsStringIs("5", pet: pet)
+        
+    }
+    
+    func testRemoveLastPet() {
+        givenAPetManager()
+        givenAPet(Pet(name: "Duke", owner: "David Smith", type: "Egyptian Longhair", age: 6, imageName: ""))
+        givenAPet(Pet(name: "Lancelot", owner: "Karen Odoul", type: "Tabby", age: 5, imageName: ""))
+        givenAPet(Pet(name: "Sir Fuzzy", owner: "Bob Odenkirk", type: "Snake", age: 2, imageName: ""))
+        
+        whenLastPetRemoved()
+        
+        let pet : Pet = _petManager.petAtIndex(_petManager.petCount - 1)
+        thenPetNameIs("Lancelot", pet: pet)
+        thenPetOwnerIs("Karen Odoul", pet: pet)
+        thenPetTypeIs("Tabby", pet: pet)
+        thenPetAgeAsStringIs("5", pet: pet)
+        
+    }
+    
+    func testRemovingPetUpdatesCount() {
+        givenAPetManager()
+        
+        // Add five pets
+        for _ in 1...5 {
+            givenAPet(RandomPet.random())
+        }
+        
+        // remove two pets
+        whenLastPetRemoved()
+        whenLastPetRemoved()
+        
+        thenPetCountIs(3)
+    }
+    
+    func testRemoveLastPetIsIdempotent() {
+        givenAPetManager()
+        givenAPet(RandomPet.random())
+        whenLastPetRemoved()
+        whenLastPetRemoved()
+        whenLastPetRemoved()
+        whenLastPetRemoved()
+        
+        thenPetCountIs(0)
+    }
 
+    func testRemoveFirstPetIsIdempotent() {
+        givenAPetManager()
+        givenAPet(RandomPet.random())
+        whenFirstPetRemoved()
+        whenFirstPetRemoved()
+        whenFirstPetRemoved()
+        whenFirstPetRemoved()
+        thenPetCountIs(0)
+    }
     
     //MARK: BDD utility methods
     
@@ -40,9 +106,34 @@ class PetManagerTests: XCTestCase {
     func givenAPetManager() {
         _petManager = PetManager()
     }
+    
+    func whenLastPetRemoved() {
+        _petManager.removeLastPet()
+    }
+    
+    func whenFirstPetRemoved() {
+        _petManager.removeFirstPet()
+    }
 
     func thenPetCountIs (count : Int) {
-        XCTAssertEqual(count, _petManager.count, "Pet count wrong")
+        XCTAssertEqual(count, _petManager.petCount, "Pet count wrong")
     }
+    
+    func thenPetNameIs(name : String, pet : Pet) {
+        XCTAssertEqual(name, pet.name,  "Expected pet name to be \(name) but was \(pet.name)")
+    }
+    
+    func thenPetOwnerIs(owner : String, pet : Pet) {
+        XCTAssertEqual(owner, pet.owner,  "Expected pet owner to be \(owner) but was \(pet.owner)")
+    }
+    
+    func thenPetTypeIs(type : String, pet : Pet) {
+        XCTAssertEqual(type, pet.type,  "Expected pet type to be \(type) but was \(pet.type)")
+    }
+    
+    func thenPetAgeAsStringIs(age : String, pet : Pet) {
+        XCTAssertEqual(age, pet.ageAsString,  "Expected pet age as string to be \(age) but was \(pet.ageAsString)")
+    }
+
     
 }
